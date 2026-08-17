@@ -1,0 +1,803 @@
+1. Functions in Python
+
+A function is a reusable block of code that performs a specific task.
+
+1.1 Built-in Functions
+
+Python provides many functions that can be used directly.
+
+print("Hello")
+len("Python")
+max(10, 20, 30)
+min(10, 20, 30)
+sum([10, 20, 30])
+type(10)
+
+Common built-in functions:
+
+Function	Purpose	Example
+print()	Displays output	print("Hello")
+input()	Reads input	input("Enter: ")
+len()	Returns length	len("Python")
+type()	Returns data type	type(10)
+max()	Largest value	max(10, 20)
+min()	Smallest value	min(10, 20)
+sum()	Calculates total	sum([1,2,3])
+abs()	Absolute value	abs(-10)
+round()	Rounds number	round(3.14159, 2)
+1.2 Commonly Used Modules
+
+A module is a Python file containing functions, classes, and variables that can be imported and reused.
+
+math module
+import math
+
+
+print(math.sqrt(25))
+print(math.pow(2, 3))
+print(math.pi)
+
+Output:
+
+5.0
+8.0
+3.141592653589793
+random module
+import random
+
+
+print(random.randint(1, 10))
+
+This generates a random integer between 1 and 10.
+
+datetime module
+import datetime
+
+
+today = datetime.date.today()
+print(today)
+2. Function Definition and Calling
+Syntax
+def function_name():
+    statements
+Example
+def greet():
+    print("Hello Students")
+
+
+greet()
+
+Here:
+
+def → keyword used to define a function
+greet → function name
+() → parameter list
+: → starts the function body
+greet() → calls the function
+Function with parameters
+def greet(name):
+    print("Hello", name)
+
+
+greet("Ravi")
+greet("Anil")
+
+Output:
+
+Hello Ravi
+Hello Anil
+3. return Statement
+
+The return statement sends a value back to the calling code.
+
+def add(a, b):
+    return a + b
+
+
+result = add(10, 20)
+
+
+print(result)
+
+Output:
+
+30
+Difference between print() and return
+def add1(a, b):
+    print(a + b)
+
+
+def add2(a, b):
+    return a + b
+
+print() displays a value, while return sends the value back so it can be stored or used in another expression.
+
+x = add2(10, 20)
+print(x * 2)
+
+Output:
+
+60
+4. Void Function
+
+A function that does not explicitly return a value is commonly called a void function.
+
+def display():
+    print("Welcome to Python")
+
+
+display()
+
+Technically, Python returns None when no value is returned.
+
+def display():
+    print("Hello")
+
+
+x = display()
+
+
+print(x)
+
+Output:
+
+Hello
+None
+5. Scope and Lifetime of Variables
+Local Variable
+
+A variable created inside a function is normally local to that function.
+
+def demo():
+    x = 10
+    print(x)
+
+
+demo()
+
+x cannot normally be accessed outside the function.
+
+Global Variable
+
+A variable created outside a function is global.
+
+x = 100
+
+
+def display():
+    print(x)
+
+
+display()
+
+Output:
+
+100
+Example
+x = 10
+
+
+def demo():
+    x = 20
+    print("Inside:", x)
+
+
+demo()
+
+
+print("Outside:", x)
+
+Output:
+
+Inside: 20
+Outside: 10
+
+The local variable and global variable are different variables.
+
+6. Default Parameters
+
+A parameter can have a default value.
+
+def greet(name="Student"):
+    print("Hello", name)
+
+
+greet()
+greet("Ravi")
+
+Output:
+
+Hello Student
+Hello Ravi
+
+Another example:
+
+def power(number, exponent=2):
+    return number ** exponent
+
+
+print(power(5))
+print(power(5, 3))
+
+Output:
+
+25
+125
+7. Keyword Arguments
+
+Arguments can be passed using parameter names.
+
+def student(name, age):
+    print("Name:", name)
+    print("Age:", age)
+
+
+student(age=20, name="Ravi")
+
+The order does not matter when keyword arguments are used.
+
+8. *args
+
+*args allows a function to accept a variable number of positional arguments.
+
+def add(*numbers):
+    total = 0
+
+
+    for n in numbers:
+        total += n
+
+
+    return total
+
+
+print(add(10, 20))
+print(add(10, 20, 30, 40))
+
+Output:
+
+30
+100
+
+Inside the function, args is stored as a tuple.
+
+9. **kwargs
+
+**kwargs allows a function to accept a variable number of keyword arguments.
+
+def student(**details):
+    print(details)
+
+
+student(name="Ravi", age=20, branch="CSE")
+
+Output:
+
+{'name': 'Ravi', 'age': 20, 'branch': 'CSE'}
+
+kwargs is stored as a dictionary.
+
+Difference
+*args     → variable positional arguments → tuple
+**kwargs  → variable keyword arguments  → dictionary
+10. Command Line Arguments
+
+Command-line arguments are values passed to a Python program when it is executed.
+
+Python provides the sys module for accessing them.
+
+Program
+import sys
+
+
+print("Program name:", sys.argv[0])
+print("First argument:", sys.argv[1])
+print("Second argument:", sys.argv[2])
+
+Run:
+
+python program.py Hello Python
+
+Output:
+
+Program name: program.py
+First argument: Hello
+Second argument: Python
+
+sys.argv is a list containing command-line arguments.
+
+11. Strings in Python
+
+A string is a sequence of characters enclosed in single, double, or triple quotes.
+
+name = 'Python'
+name = "Python"
+message = """This is
+a multiline string."""
+12. Creating and Storing Strings
+name = "Ravi"
+course = 'Python'
+college = """Tirumala Engineering College"""
+
+
+print(name)
+print(course)
+print(college)
+
+Strings are immutable, meaning their individual characters cannot be changed after creation.
+
+13. Basic String Operations
+Concatenation
+
+Joining two strings:
+
+first = "Hello"
+second = "Python"
+
+
+result = first + " " + second
+
+
+print(result)
+
+Output:
+
+Hello Python
+Repetition
+print("Python " * 3)
+
+Output:
+
+Python Python Python
+Membership
+text = "Python Programming"
+
+
+print("Python" in text)
+print("Java" in text)
+
+Output:
+
+True
+False
+Length
+text = "Python"
+
+
+print(len(text))
+
+Output:
+
+6
+14. Accessing Characters Using Index
+
+Python uses zero-based indexing.
+
+text = "Python"
+
+
+print(text[0])
+print(text[1])
+print(text[5])
+
+Output:
+
+P
+y
+n
+Negative indexing
+text = "Python"
+
+
+print(text[-1])
+print(text[-2])
+
+Output:
+
+n
+o
+
+Index positions:
+
+ P  y  t  h  o  n
+ 0  1  2  3  4  5
+-6 -5 -4 -3 -2 -1
+15. String Slicing
+
+Syntax:
+
+string[start:end]
+
+The end index is excluded.
+
+text = "Python"
+
+
+print(text[0:3])
+print(text[2:5])
+
+Output:
+
+Pyt
+tho
+Using step
+text = "Python"
+
+
+print(text[::2])
+
+Output:
+
+Pto
+Reverse a string
+text = "Python"
+
+
+print(text[::-1])
+
+Output:
+
+nohtyP
+16. Joining Strings
+
+The join() method combines multiple strings.
+
+words = ["Python", "is", "easy"]
+
+
+sentence = " ".join(words)
+
+
+print(sentence)
+
+Output:
+
+Python is easy
+
+Another example:
+
+numbers = ["10", "20", "30"]
+
+
+result = "-".join(numbers)
+
+
+print(result)
+
+Output:
+
+10-20-30
+17. String Methods
+
+Some commonly used string methods are:
+
+upper()
+text = "python"
+print(text.upper())
+lower()
+text = "PYTHON"
+print(text.lower())
+capitalize()
+text = "python programming"
+print(text.capitalize())
+title()
+text = "python programming"
+print(text.title())
+strip()
+
+Removes leading and trailing whitespace.
+
+text = "  Python  "
+
+
+print(text.strip())
+replace()
+text = "I like Java"
+
+
+print(text.replace("Java", "Python"))
+split()
+text = "Python is easy"
+
+
+words = text.split()
+
+
+print(words)
+
+Output:
+
+['Python', 'is', 'easy']
+find()
+text = "Python Programming"
+
+
+print(text.find("Program"))
+count()
+text = "banana"
+
+
+print(text.count("a"))
+startswith() and endswith()
+text = "Python Programming"
+
+
+print(text.startswith("Python"))
+print(text.endswith("Programming"))
+18. Formatting Strings
+Using f-strings
+
+The most convenient modern approach is the f-string.
+
+name = "Ravi"
+age = 20
+
+
+print(f"My name is {name} and I am {age} years old.")
+
+Output:
+
+My name is Ravi and I am 20 years old.
+Expressions inside f-strings
+a = 10
+b = 20
+
+
+print(f"Sum = {a + b}")
+
+Output:
+
+Sum = 30
+19. Lists in Python
+
+A list is an ordered, mutable collection of elements.
+
+numbers = [10, 20, 30, 40]
+
+
+print(numbers)
+
+A list can contain different data types.
+
+student = ["Ravi", 20, 85.5, True]
+
+
+print(student)
+20. Creating Lists
+numbers = [1, 2, 3, 4, 5]
+
+
+names = ["Ravi", "Anil", "Sita"]
+
+
+empty_list = []
+
+Using list():
+
+numbers = list((10, 20, 30))
+
+
+print(numbers)
+21. Basic List Operations
+Concatenation
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+
+print(a + b)
+Repetition
+print([1, 2] * 3)
+Membership
+numbers = [10, 20, 30]
+
+
+print(20 in numbers)
+print(50 in numbers)
+Length
+numbers = [10, 20, 30]
+
+
+print(len(numbers))
+22. Indexing in Lists
+numbers = [10, 20, 30, 40, 50]
+
+
+print(numbers[0])
+print(numbers[2])
+print(numbers[-1])
+
+Output:
+
+10
+30
+50
+
+Unlike strings, lists are mutable.
+
+numbers = [10, 20, 30]
+
+
+numbers[1] = 200
+
+
+print(numbers)
+
+Output:
+
+[10, 200, 30]
+23. List Slicing
+numbers = [10, 20, 30, 40, 50]
+
+
+print(numbers[1:4])
+print(numbers[:3])
+print(numbers[2:])
+print(numbers[::-1])
+
+Output:
+
+[20, 30, 40]
+[10, 20, 30]
+[30, 40, 50]
+[50, 40, 30, 20, 10]
+24. Built-in Functions Used on Lists
+numbers = [10, 20, 30, 40, 50]
+
+
+print(len(numbers))
+print(max(numbers))
+print(min(numbers))
+print(sum(numbers))
+
+Other useful functions:
+
+print(sorted(numbers))
+print(any([False, True, False]))
+print(all([True, True, True]))
+25. List Methods
+append()
+
+Adds an element at the end.
+
+numbers = [10, 20, 30]
+
+
+numbers.append(40)
+
+
+print(numbers)
+insert()
+
+Adds an element at a specific position.
+
+numbers.insert(1, 15)
+
+
+print(numbers)
+extend()
+
+Adds multiple elements.
+
+numbers.extend([50, 60])
+
+
+print(numbers)
+remove()
+
+Removes a specified element.
+
+numbers.remove(20)
+
+
+print(numbers)
+pop()
+
+Removes and returns an element.
+
+numbers = [10, 20, 30]
+
+
+x = numbers.pop()
+
+
+print(x)
+print(numbers)
+index()
+
+Returns the position of an element.
+
+numbers = [10, 20, 30]
+
+
+print(numbers.index(20))
+count()
+
+Counts occurrences.
+
+numbers = [10, 20, 20, 30]
+
+
+print(numbers.count(20))
+sort()
+
+Sorts the list.
+
+numbers = [30, 10, 20]
+
+
+numbers.sort()
+
+
+print(numbers)
+reverse()
+
+Reverses the list.
+
+numbers.reverse()
+
+
+print(numbers)
+clear()
+
+Removes all elements.
+
+numbers.clear()
+
+
+print(numbers)
+26. del Statement
+
+The del statement can delete an element, multiple elements, or an entire variable.
+
+Delete one element
+numbers = [10, 20, 30, 40]
+
+
+del numbers[1]
+
+
+print(numbers)
+
+Output:
+
+[10, 30, 40]
+Delete a range
+numbers = [10, 20, 30, 40, 50]
+
+
+del numbers[1:4]
+
+
+print(numbers)
+
+Output:
+
+[10, 50]
+Delete the entire list
+numbers = [10, 20, 30]
+
+
+del numbers
+
+After this, numbers no longer exists.
+
+Quick Comparison for Students
+Topic	Important Point
+Function	Reusable block of code
+def	Defines a function
+return	Sends value back
+*args	Multiple positional arguments
+**kwargs	Multiple keyword arguments
+String	Immutable sequence of characters
+String indexing	Starts from 0
+String slicing	str[start:end]
+List	Ordered, mutable collection
+List indexing	Starts from 0
+append()	Adds one item at end
+extend()	Adds multiple items
+insert()	Adds item at specified position
+remove()	Removes specified value
+pop()	Removes item by index and returns it
+sort()	Sorts the list
+reverse()	Reverses the list
+del	Deletes item/range/variable
