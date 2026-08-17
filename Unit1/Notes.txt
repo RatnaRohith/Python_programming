@@ -1,0 +1,785 @@
+Unit 1: Introduction to Python
+1. History of Python Programming Language
+What is Python?
+
+Python is a high-level, interpreted, general-purpose programming language known for its simple syntax and readability.
+
+History
+Python was created by Guido van Rossum.
+Development began in the late 1980s at CWI in the Netherlands.
+Python was first released publicly in 1991.
+The name "Python" was inspired by the comedy show Monty Python's Flying Circus, not the snake.
+Python 2.0 was released in 2000.
+Python 3.0 was released in 2008.
+Python 2 reached its official end of life in January 2020.
+Today, Python 3 is the standard version.
+Important features
+Simple and readable syntax
+Easy to learn
+Interpreted
+Dynamically typed
+Object-oriented
+Portable
+Open source
+Large standard library
+Supports multiple programming paradigms
+Extensive third-party libraries
+2. Thrust Areas of Python
+
+Python is widely used in several areas.
+
+1. Web Development
+
+Frameworks:
+
+Django
+Flask
+FastAPI
+2. Data Science
+
+Libraries:
+
+NumPy
+Pandas
+Matplotlib
+3. Artificial Intelligence and Machine Learning
+
+Libraries:
+
+Scikit-learn
+TensorFlow
+PyTorch
+4. Automation and Scripting
+
+Python can automate repetitive tasks such as:
+
+File processing
+Data processing
+System administration
+Web automation
+5. Scientific Computing
+
+Used for:
+
+Mathematical computations
+Simulations
+Scientific research
+6. Game Development
+
+Libraries/frameworks include:
+
+Pygame
+Panda3D
+7. Desktop Application Development
+
+Libraries:
+
+Tkinter
+PyQt
+Kivy
+8. Cybersecurity
+
+Python is used for:
+
+Security testing
+Network analysis
+Automation
+9. Natural Language Processing
+
+Python is widely used for:
+
+Text analysis
+Chatbots
+Language processing
+3. Installing Anaconda Python Distribution
+What is Anaconda?
+
+Anaconda is a Python distribution designed mainly for:
+
+Data science
+Machine learning
+Scientific computing
+
+It includes Python and many commonly used packages.
+
+Advantages of Anaconda
+Easy package management
+Easy environment management
+Includes many scientific libraries
+Provides Jupyter Notebook
+Provides Anaconda Navigator
+Installation steps
+Download Anaconda from the official Anaconda website.
+Select the appropriate operating system.
+Download the installer.
+Run the installer.
+Choose the installation location.
+Complete the installation.
+Open Anaconda Navigator or Anaconda Prompt.
+Verify Python installation:
+python --version
+
+Example output:
+
+Python 3.x.x
+4. Installing and Using Jupyter Notebook
+What is Jupyter Notebook?
+
+Jupyter Notebook is an interactive environment where we can write and execute Python code in separate cells.
+
+It is especially useful for:
+
+Teaching
+Learning Python
+Data analysis
+Visualization
+Machine learning
+Starting Jupyter Notebook
+
+From Anaconda Navigator:
+
+Anaconda Navigator → Jupyter Notebook → Launch
+
+Or from Anaconda Prompt:
+
+jupyter notebook
+
+The notebook normally opens in a web browser.
+
+Creating a notebook
+Open Jupyter Notebook.
+Navigate to the required folder.
+Select New → Python 3.
+Enter Python code.
+Press Shift + Enter to execute the cell.
+
+Example:
+
+print("Hello, Python")
+
+Output:
+
+Hello, Python
+Unit 2: Parts of Python Programming Language
+5. Identifiers
+
+An identifier is the name given to a programming element such as a variable, function, class, or object.
+
+Example:
+
+name = "Ravi"
+age = 20
+
+Here:
+
+name → identifier
+age → identifier
+Rules for identifiers
+Can contain letters, digits and underscore.
+Cannot begin with a digit.
+Cannot contain spaces.
+Cannot use Python keywords.
+Identifiers are case-sensitive.
+
+Valid:
+
+student_name
+age
+marks1
+_total
+
+Invalid:
+
+1name
+student name
+class
+6. Keywords
+
+Keywords are reserved words that have a special meaning in Python.
+
+Examples:
+
+if
+else
+elif
+for
+while
+break
+continue
+def
+return
+class
+try
+except
+True
+False
+None
+
+We cannot normally use keywords as variable names.
+
+Example:
+
+if = 10
+
+This produces a syntax error.
+
+7. Statements and Expressions
+Statement
+
+A statement is an instruction executed by Python.
+
+Example:
+
+x = 10
+print(x)
+Expression
+
+An expression is a combination of values, variables and operators that produces a result.
+
+Example:
+
+10 + 20
+
+Another example:
+
+x + y
+
+The expression produces a value.
+
+8. Variables
+
+A variable is a name used to refer to a value.
+
+Example:
+
+age = 20
+name = "Ravi"
+
+Python does not require us to declare the variable type explicitly.
+
+x = 10
+x = "Hello"
+
+The same variable can refer to objects of different types at different times.
+
+9. Operators
+
+Operators perform operations on values and variables.
+
+Arithmetic operators
++   Addition
+-   Subtraction
+*   Multiplication
+/   Division
+%   Modulus
+//  Floor division
+**  Exponentiation
+
+Example:
+
+a = 10
+b = 3
+
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a % b)
+print(a // b)
+print(a ** b)
+Relational operators
+>    Greater than
+<    Less than
+>=   Greater than or equal
+<=   Less than or equal
+==   Equal to
+!=   Not equal to
+Logical operators
+and
+or
+not
+Assignment operators
+=
++=
+-=
+*=
+/=
+%=
+10. Operator Precedence and Associativity
+
+Precedence determines which operator is evaluated first.
+
+Example:
+
+result = 10 + 5 * 2
+
+Multiplication is performed first:
+
+10 + (5 × 2)
+= 20
+Common precedence order
+
+From higher to lower:
+
+()
+**
++x, -x
+*, /, //, %
++, -
+<, <=, >, >=
+==, !=
+not
+and
+or
+Associativity
+
+Associativity determines the order in which operators having the same precedence are evaluated.
+
+Most operators are left associative.
+
+Example:
+
+20 - 5 - 3
+
+Evaluated as:
+
+(20 - 5) - 3
+= 12
+
+Exponentiation is an important exception because it is right associative:
+
+2 ** 3 ** 2
+
+is evaluated as:
+
+2 ** (3 ** 2)
+11. Data Types
+
+Python provides several built-in data types.
+
+Numeric
+int
+float
+complex
+
+Example:
+
+a = 10
+b = 10.5
+c = 2 + 3j
+Boolean
+True
+False
+String
+name = "Python"
+List
+numbers = [10, 20, 30]
+Tuple
+numbers = (10, 20, 30)
+Set
+numbers = {10, 20, 30}
+Dictionary
+student = {"name": "Ravi", "age": 20}
+None
+x = None
+12. Indentation
+
+Indentation means the spaces at the beginning of a line.
+
+Python uses indentation to define blocks of code.
+
+Example:
+
+age = 20
+
+
+if age >= 18:
+    print("Eligible")
+
+The indented statement belongs to the if block.
+
+Incorrect indentation:
+
+if age >= 18:
+print("Eligible")
+
+This produces an indentation error.
+
+Usually 4 spaces are recommended for each indentation level.
+
+13. Comments
+
+Comments are ignored by the Python interpreter.
+
+Single-line comment
+# This is a comment
+print("Hello")
+Multi-line documentation/comment style
+
+Triple-quoted strings can be used as documentation strings:
+
+"""
+This is a multi-line
+documentation string.
+"""
+14. Reading Input
+
+Python uses the input() function to read input from the user.
+
+name = input("Enter your name: ")
+print(name)
+
+By default, input() returns a string.
+
+Example:
+
+age = input("Enter age: ")
+
+If the user enters 20, age contains "20" as a string.
+
+15. Print Output
+
+The print() function displays output.
+
+print("Hello World")
+
+Multiple values:
+
+name = "Ravi"
+age = 20
+
+
+print(name, age)
+
+Using formatted strings:
+
+print(f"My name is {name} and I am {age} years old.")
+16. Type Conversion
+
+Type conversion means converting one data type into another.
+
+String to integer
+age = int("20")
+String to float
+price = float("25.5")
+Integer to string
+x = str(100)
+Integer to float
+x = float(10)
+
+Example:
+
+a = input("Enter first number: ")
+b = input("Enter second number: ")
+
+
+sum = int(a) + int(b)
+
+
+print("Sum =", sum)
+17. type() Function
+
+The type() function tells us the type of an object.
+
+Example:
+
+x = 10
+print(type(x))
+
+Output:
+
+<class 'int'>
+
+Another example:
+
+name = "Python"
+print(type(name))
+
+Output:
+
+<class 'str'>
+18. is Operator
+
+The is operator checks whether two variables refer to the same object.
+
+Example:
+
+a = None
+
+
+print(a is None)
+
+Output:
+
+True
+
+Important distinction:
+
+== 
+
+checks value equality.
+
+is
+
+checks object identity.
+
+19. Python as a Dynamically Typed Language
+
+Python is dynamically typed because we do not need to specify a variable's type when creating it.
+
+x = 10
+print(type(x))
+
+
+x = "Hello"
+print(type(x))
+
+The type associated with x changes depending on the object assigned to it.
+
+20. Python as a Strongly Typed Language
+
+Python is strongly typed because it does not automatically perform arbitrary conversions between incompatible types.
+
+Example:
+
+x = 10
+y = "20"
+
+
+print(x + y)
+
+This produces a TypeError.
+
+We need explicit conversion:
+
+print(x + int(y))
+
+Output:
+
+30
+Dynamic vs Strong typing
+Concept	Meaning
+Dynamically typed	Variable type need not be declared
+Strongly typed	Incompatible types are not freely mixed
+Unit 3: Control Flow Statements
+
+Control flow determines the order in which program statements are executed.
+
+21. if Statement
+
+Used when a block should execute only when a condition is true.
+
+Syntax:
+
+if condition:
+    statement
+
+Example:
+
+age = 20
+
+
+if age >= 18:
+    print("Eligible to vote")
+22. if-else Statement
+
+Used when there are two possible paths.
+
+age = 16
+
+
+if age >= 18:
+    print("Eligible")
+else:
+    print("Not eligible")
+23. if...elif...else
+
+Used when there are multiple conditions.
+
+marks = 75
+
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 75:
+    print("Grade B")
+elif marks >= 60:
+    print("Grade C")
+else:
+    print("Grade D")
+
+Only the first matching condition is executed.
+
+24. Nested if
+
+An if statement inside another if statement is called a nested if.
+
+Example:
+
+age = 20
+citizen = True
+
+
+if age >= 18:
+    if citizen:
+        print("Eligible to vote")
+25. while Loop
+
+A while loop repeatedly executes a block as long as a condition is true.
+
+Syntax:
+
+while condition:
+    statements
+
+Example:
+
+i = 1
+
+
+while i <= 5:
+    print(i)
+    i += 1
+
+Output:
+
+1
+2
+3
+4
+5
+26. for Loop
+
+A for loop is commonly used to iterate over a sequence or other iterable.
+
+Example:
+
+for i in range(1, 6):
+    print(i)
+
+Output:
+
+1
+2
+3
+4
+5
+
+Iterating over a string:
+
+for ch in "Python":
+    print(ch)
+27. break Statement
+
+break terminates the loop immediately.
+
+Example:
+
+for i in range(1, 10):
+    if i == 5:
+        break
+    print(i)
+
+Output:
+
+1
+2
+3
+4
+28. continue Statement
+
+continue skips the current iteration and proceeds to the next iteration.
+
+Example:
+
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)
+
+Output:
+
+1
+2
+4
+5
+break vs continue
+break	continue
+Terminates the loop	Skips current iteration
+Control exits the loop	Control moves to next iteration
+29. Exception Handling Using try and except
+
+An exception is an error that occurs during program execution.
+
+Python provides try and except to handle exceptions.
+
+Example:
+
+try:
+    a = int(input("Enter a number: "))
+    b = int(input("Enter another number: "))
+
+
+    result = a / b
+    print(result)
+
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+
+except ValueError:
+    print("Please enter valid numbers")
+Structure
+try:
+    # Code that may cause an exception
+except:
+    # Code that handles the exception
+Why exception handling is important
+
+Without exception handling, an error can terminate the program.
+
+With exception handling, we can:
+
+Detect errors
+Handle errors gracefully
+Display meaningful messages
+Continue program execution where appropriate
+Quick Revision Map
+Python
+│
+├── Introduction
+│   ├── History
+│   ├── Features
+│   ├── Applications / Thrust Areas
+│   ├── Anaconda
+│   └── Jupyter Notebook
+│
+├── Python Fundamentals
+│   ├── Identifiers
+│   ├── Keywords
+│   ├── Statements
+│   ├── Expressions
+│   ├── Variables
+│   ├── Operators
+│   ├── Precedence & Associativity
+│   ├── Data Types
+│   ├── Indentation
+│   ├── Comments
+│   ├── Input / Output
+│   ├── Type Conversion
+│   ├── type()
+│   ├── is
+│   └── Dynamic & Strong Typing
+│
+└── Control Flow
+    ├── if
+    ├── if-else
+    ├── if-elif-else
+    ├── Nested if
+    ├── while
+    ├── for
+    ├── break
+    ├── continue
+    └── try-except
