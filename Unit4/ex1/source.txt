@@ -1,0 +1,6 @@
+Python
+Apple
+banana
+HELLO
+Computer
+WORLD
