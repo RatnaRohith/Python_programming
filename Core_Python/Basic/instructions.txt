@@ -1,0 +1,5 @@
+Instructions:
+1) Execute all the programs in the module
+2) write a sample program to showcase the previous lessons
+3) 
+

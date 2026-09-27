@@ -14,3 +14,4 @@ x = bool(5)
 x = bytes(5)	
 x = bytearray(5)	
 x = memoryview(bytes(5))	
+
